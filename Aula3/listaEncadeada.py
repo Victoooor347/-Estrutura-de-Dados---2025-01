@@ -69,6 +69,7 @@ minha_lista = Lista(1)
 
 insert_node(minha_lista, 2)
 insert_node(minha_lista, 3)
+insert_node(minha_lista, 4)
 
 
 print(minha_lista.info)

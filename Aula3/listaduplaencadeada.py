@@ -28,19 +28,66 @@ def remove_list(lista, value):
     while atual is not None:
         if atual.info == value:
             if atual == lista:
-                prox = atual.prox
-                prox.ant = None
+                if atual.prox is not None:
+                    prox = atual.prox
+                    prox.ant = None
                 return atual.prox
             elif atual.prox == None:
                 anterior.prox = None
                 return lista
             else:
                 anterior.prox = atual.prox
+                if atual.prox is not None:
+                    prox = atual.prox
+                    prox.ant = anterior
                 return lista
             
 
         anterior = atual
         atual = atual.prox
+
+
+def get_last_element(lista):
+    atual = lista
+
+    while atual.prox is not None:
+        atual = atual.prox
+
+    return atual
+
+
+def print_inverse(ultimo_elemento):
+    atual = ultimo_elemento
+
+    while atual is not None:
+        print(atual.info)
+        atual = atual.ant
+
+
+def insert_end(lista, value):
+    novo = Lista(value)
+    atual = lista
+
+    while atual is not None:
+        if atual.prox == None:
+            atual.prox = novo
+            novo.ant = atual
+
+    return lista
+
+
+def insert_order(lista, value):
+    novo = Lista(value)
+    atual = lista
+    anterior = None
+
+
+
+
+
+
+
+
 
 
 
@@ -54,7 +101,15 @@ print_lista(minha_lista)
 
 print("=========================")
 
-
 minha_lista = remove_list(minha_lista, 8)
-
 print_lista(minha_lista)
+
+print("=========================")
+
+# ultimo_elemento = get_last_element(minha_lista)
+# print(ultimo_elemento.info)
+
+print("=========================")
+
+inverso = print_inverse(minha_lista)
+print(inverso)
