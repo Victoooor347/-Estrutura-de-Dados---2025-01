@@ -1,4 +1,3 @@
-
 class Lista:
     def __init__(self, info):
         self.info = info
@@ -31,18 +30,19 @@ def show_elements(lista):
         if atual == lista:
             break
 
-def busca(lista, info):
+def contar_elementos(lista):
     atual = lista
+    cont = 0 
 
     while True:
-        if atual.info == info:
-            return True
+        cont += 1
         atual = atual.prox
+
         if atual == lista:
-            return False
-
-
-
+            break
+        
+    return cont
+        
 lista = None
 
 lista = insert_node(lista, 9)
@@ -53,7 +53,6 @@ lista = insert_node(lista, 3)
 print("=-=-=-= ANTES =-=-=-=")
 show_elements(lista)
 
-print("=-=-=-= ANTES =-=-=-=")
-
-buscar = busca(lista, 10)
-print(buscar)
+print("=================")
+quantidade = contar_elementos(lista)
+print(f"a quantidade de elementos é {quantidade}")
