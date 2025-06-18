@@ -24,7 +24,7 @@ def insert(root, key):
         root.direita = insert(root.direita, key)
     return root
 
-def igual(raiz1, raiz2):
+# def igual(raiz1, raiz2):
         
 
 arvore = BinaryTree()
